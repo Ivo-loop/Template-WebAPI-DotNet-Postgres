@@ -27,7 +27,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Docker
-        run: docker-compose up postgres -d
+        run: docker-compose up -d postgres
 
       - name: Integration & Unit Test
         run: dotnet test -c Debug
