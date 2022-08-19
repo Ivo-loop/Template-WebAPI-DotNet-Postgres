@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - 'LICENSE'
+      - 'README.md'
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'LICENSE'
+      - 'README.md'
+  workflow_dispatch:
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Docker
+        run: docker-compose up postgres -d
+
+      - name: Integration & Unit Test
+        run: dotnet test -c Debug
+
+      - name: Mutation Test
+        run: |
+          dotnet tool install -g dotnet-stryker
+          cd Tests/Integration
+          dotnet stryker -p Application.csproj
+          cd ../Unit
+          dotnet stryker -p Domain.csproj
+
+      - name: Get Mutation Reports
+        shell: pwsh
+        run: |
+          $integrationTests = (Get-ChildItem -Path ./ -Filter mutation-report.html -Recurse -ErrorAction SilentlyContinue -Force)[0].FullName
+          $unitTests = (Get-ChildItem -Path ./ -Filter mutation-report.html -Recurse -ErrorAction SilentlyContinue -Force)[1].FullName
+          Copy-Item -Path $integrationTests -Destination ./mutation-report-integration-tests.html
+          Copy-Item -Path $unitTests -Destination ./mutation-report-unit-tests.html
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10.x
+
+      - name: Merge Mutation Reports
+        run: |
+          python -m pip install -u pip bs4
+          python stryker.py
+
+      - name: Publish Final Mutation Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: mutation-report
+          path: mutation-report.html
