@@ -55,7 +55,7 @@ jobs:
 
       - name: Merge Mutation Reports
         run: |
-          python pip install pip bs4
+          python -m pip install pip bs4
           python stryker.py
 
       - name: Publish Final Mutation Report
