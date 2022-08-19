@@ -20,9 +20,9 @@ public class UserTests
         _user.Password.Should().Be(Password);
         _user.Key.Should().BeEquivalentTo(Key);
         _user.Id.Should().NotBeEmpty();
-        _user.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.MaxValue);
+        _user.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.FromSeconds(1));
         _user.CreatedBy.Should().Be(Email);
-        _user.LastUpdatedAt.Should().BeCloseTo(_dateTime, TimeSpan.MaxValue);
+        _user.LastUpdatedAt.Should().BeCloseTo(_dateTime, TimeSpan.FromSeconds(1));
         _user.LastUpdatedBy.Should().Be(Email);
         _user.Active.Should().BeTrue();
     }
@@ -39,7 +39,7 @@ public class UserTests
         _user.Password.Should().Be(Password);
         _user.Key.Should().BeEquivalentTo(Key);
         _user.Id.Should().NotBeEmpty();
-        _user.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.MaxValue);
+        _user.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.FromSeconds(1));
         _user.CreatedBy.Should().Be(Email);
         _user.LastUpdatedAt.Should().BeAfter(_user.CreatedAt);
         _user.LastUpdatedBy.Should().Be(Email);
@@ -60,7 +60,7 @@ public class UserTests
         _user.Password.Should().Be(newPassword);
         _user.Key.Should().BeEquivalentTo(newKey);
         _user.Id.Should().NotBeEmpty();
-        _user.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.MaxValue);
+        _user.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.FromSeconds(1));
         _user.CreatedBy.Should().Be(Email);
         _user.LastUpdatedAt.Should().BeAfter(_user.CreatedAt);
         _user.LastUpdatedBy.Should().Be(Email);

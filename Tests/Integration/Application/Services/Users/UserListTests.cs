@@ -50,9 +50,9 @@ public class UserListTests : IntegrationBase
         var userDb = _usersDb.First();
         user.Email.Should().Be(userDb.Email);
         user.Id.Should().Be(userDb.Id);
-        user.CreatedAt.Should().Be(userDb.CreatedAt);
+        user.CreatedAt.Should().BeCloseTo(userDb.CreatedAt, TimeSpan.FromSeconds(1));
         user.CreatedBy.Should().Be(userDb.CreatedBy);
-        user.LastUpdatedAt.Should().Be(userDb.LastUpdatedAt);
+        user.LastUpdatedAt.Should().BeCloseTo(userDb.LastUpdatedAt, TimeSpan.FromSeconds(1));
         user.LastUpdatedBy.Should().Be(userDb.LastUpdatedBy);
         user.Active.Should().Be(userDb.Active);
     }
@@ -90,18 +90,18 @@ public class UserListTests : IntegrationBase
         var firstUserDb = _usersDb.First();
         firstUser.Email.Should().Be(firstUserDb.Email);
         firstUser.Id.Should().Be(firstUserDb.Id);
-        firstUser.CreatedAt.Should().Be(firstUserDb.CreatedAt);
+        firstUser.CreatedAt.Should().BeCloseTo(firstUserDb.CreatedAt, TimeSpan.FromSeconds(1));
         firstUser.CreatedBy.Should().Be(firstUserDb.CreatedBy);
-        firstUser.LastUpdatedAt.Should().Be(firstUserDb.LastUpdatedAt);
+        firstUser.LastUpdatedAt.Should().BeCloseTo(firstUserDb.LastUpdatedAt, TimeSpan.FromSeconds(1));
         firstUser.LastUpdatedBy.Should().Be(firstUserDb.LastUpdatedBy);
         firstUser.Active.Should().Be(firstUserDb.Active);
         var lastUser = response.Data.Last();
         var lastUserDb = _usersDb.Last();
         lastUser.Email.Should().Be(lastUserDb.Email);
         lastUser.Id.Should().Be(lastUserDb.Id);
-        lastUser.CreatedAt.Should().Be(lastUserDb.CreatedAt);
+        lastUser.CreatedAt.Should().BeCloseTo(lastUserDb.CreatedAt, TimeSpan.FromSeconds(1));
         lastUser.CreatedBy.Should().Be(lastUserDb.CreatedBy);
-        lastUser.LastUpdatedAt.Should().Be(lastUserDb.LastUpdatedAt);
+        lastUser.LastUpdatedAt.Should().BeCloseTo(lastUserDb.LastUpdatedAt, TimeSpan.FromSeconds(1));
         lastUser.LastUpdatedBy.Should().Be(lastUserDb.LastUpdatedBy);
         lastUser.Active.Should().Be(lastUserDb.Active);
     }
@@ -124,18 +124,18 @@ public class UserListTests : IntegrationBase
         var firstUserDb = _usersDb.First();
         firstUser.Email.Should().Be(firstUserDb.Email);
         firstUser.Id.Should().Be(firstUserDb.Id);
-        firstUser.CreatedAt.Should().Be(firstUserDb.CreatedAt);
+        firstUser.CreatedAt.Should().BeCloseTo(firstUserDb.CreatedAt, TimeSpan.FromSeconds(1));
         firstUser.CreatedBy.Should().Be(firstUserDb.CreatedBy);
-        firstUser.LastUpdatedAt.Should().Be(firstUserDb.LastUpdatedAt);
+        firstUser.LastUpdatedAt.Should().BeCloseTo(firstUserDb.LastUpdatedAt, TimeSpan.FromSeconds(1));
         firstUser.LastUpdatedBy.Should().Be(firstUserDb.LastUpdatedBy);
         firstUser.Active.Should().Be(firstUserDb.Active);
         var lastUser = response.Data.Last();
         var lastUserDb = _usersDb.Last();
         lastUser.Email.Should().Be(lastUserDb.Email);
         lastUser.Id.Should().Be(lastUserDb.Id);
-        lastUser.CreatedAt.Should().Be(lastUserDb.CreatedAt);
+        lastUser.CreatedAt.Should().BeCloseTo(lastUserDb.CreatedAt, TimeSpan.FromSeconds(1));
         lastUser.CreatedBy.Should().Be(lastUserDb.CreatedBy);
-        lastUser.LastUpdatedAt.Should().Be(lastUserDb.LastUpdatedAt);
+        lastUser.LastUpdatedAt.Should().BeCloseTo(lastUserDb.LastUpdatedAt, TimeSpan.FromSeconds(1));
         lastUser.LastUpdatedBy.Should().Be(lastUserDb.LastUpdatedBy);
         lastUser.Active.Should().Be(lastUserDb.Active);
     }
@@ -157,9 +157,9 @@ public class UserListTests : IntegrationBase
         var userDb = _usersDb.First();
         user.Email.Should().Be(userDb.Email);
         user.Id.Should().Be(userDb.Id);
-        user.CreatedAt.Should().Be(userDb.CreatedAt);
+        user.CreatedAt.Should().BeCloseTo(userDb.CreatedAt, TimeSpan.FromSeconds(1));
         user.CreatedBy.Should().Be(userDb.CreatedBy);
-        user.LastUpdatedAt.Should().Be(userDb.LastUpdatedAt);
+        user.LastUpdatedAt.Should().BeCloseTo(userDb.LastUpdatedAt, TimeSpan.FromSeconds(1));
         user.LastUpdatedBy.Should().Be(userDb.LastUpdatedBy);
         user.Active.Should().Be(userDb.Active);
     }
@@ -184,18 +184,18 @@ public class UserListTests : IntegrationBase
         var firstUserDb = _usersDb.First();
         firstUser.Email.Should().Be(firstUserDb.Email);
         firstUser.Id.Should().Be(firstUserDb.Id);
-        firstUser.CreatedAt.Should().Be(firstUserDb.CreatedAt);
+        firstUser.CreatedAt.Should().BeCloseTo(firstUserDb.CreatedAt, TimeSpan.FromSeconds(1));
         firstUser.CreatedBy.Should().Be(firstUserDb.CreatedBy);
-        firstUser.LastUpdatedAt.Should().Be(firstUserDb.LastUpdatedAt);
+        firstUser.LastUpdatedAt.Should().BeCloseTo(firstUserDb.LastUpdatedAt, TimeSpan.FromSeconds(1));
         firstUser.LastUpdatedBy.Should().Be(firstUserDb.LastUpdatedBy);
         firstUser.Active.Should().Be(firstUserDb.Active);
         var lastUser = response.Data.Last();
         var lastUserDb = _usersDb.Last();
         lastUser.Email.Should().Be(lastUserDb.Email);
         lastUser.Id.Should().Be(lastUserDb.Id);
-        lastUser.CreatedAt.Should().Be(lastUserDb.CreatedAt);
+        lastUser.CreatedAt.Should().BeCloseTo(lastUserDb.CreatedAt, TimeSpan.FromSeconds(1));
         lastUser.CreatedBy.Should().Be(lastUserDb.CreatedBy);
-        lastUser.LastUpdatedAt.Should().Be(lastUserDb.LastUpdatedAt);
+        lastUser.LastUpdatedAt.Should().BeCloseTo(lastUserDb.LastUpdatedAt, TimeSpan.FromSeconds(1));
         lastUser.LastUpdatedBy.Should().Be(lastUserDb.LastUpdatedBy);
         lastUser.Active.Should().Be(lastUserDb.Active);
     }
@@ -217,9 +217,9 @@ public class UserListTests : IntegrationBase
         var userDb = _usersDb.First();
         user.Email.Should().Be(userDb.Email);
         user.Id.Should().Be(userDb.Id);
-        user.CreatedAt.Should().Be(userDb.CreatedAt);
+        user.CreatedAt.Should().BeCloseTo(userDb.CreatedAt, TimeSpan.FromSeconds(1));
         user.CreatedBy.Should().Be(userDb.CreatedBy);
-        user.LastUpdatedAt.Should().Be(userDb.LastUpdatedAt);
+        user.LastUpdatedAt.Should().BeCloseTo(userDb.LastUpdatedAt, TimeSpan.FromSeconds(1));
         user.LastUpdatedBy.Should().Be(userDb.LastUpdatedBy);
         user.Active.Should().Be(userDb.Active);
     }
@@ -241,9 +241,9 @@ public class UserListTests : IntegrationBase
         var userDb = _usersDb.First();
         user.Email.Should().Be(userDb.Email);
         user.Id.Should().Be(userDb.Id);
-        user.CreatedAt.Should().Be(userDb.CreatedAt);
+        user.CreatedAt.Should().BeCloseTo(userDb.CreatedAt, TimeSpan.FromSeconds(1));
         user.CreatedBy.Should().Be(userDb.CreatedBy);
-        user.LastUpdatedAt.Should().Be(userDb.LastUpdatedAt);
+        user.LastUpdatedAt.Should().BeCloseTo(userDb.LastUpdatedAt, TimeSpan.FromSeconds(1));
         user.LastUpdatedBy.Should().Be(userDb.LastUpdatedBy);
         user.Active.Should().Be(userDb.Active);
     }

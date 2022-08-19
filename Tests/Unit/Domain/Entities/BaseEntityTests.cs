@@ -19,9 +19,9 @@ public class BaseEntityTests
 
         _entityForTests.Property.Should().Be(CreateProperty);
         _entityForTests.Id.Should().NotBeEmpty();
-        _entityForTests.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.MaxValue);
+        _entityForTests.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.FromSeconds(1));
         _entityForTests.CreatedBy.Should().Be(CreateRequestedBy);
-        _entityForTests.LastUpdatedAt.Should().BeCloseTo(_dateTime, TimeSpan.MaxValue);
+        _entityForTests.LastUpdatedAt.Should().BeCloseTo(_dateTime, TimeSpan.FromSeconds(1));
         _entityForTests.LastUpdatedBy.Should().Be(CreateRequestedBy);
         _entityForTests.Active.Should().BeTrue();
     }
@@ -36,7 +36,7 @@ public class BaseEntityTests
 
         _entityForTests.Property.Should().Be(CreateProperty);
         _entityForTests.Id.Should().NotBeEmpty();
-        _entityForTests.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.MaxValue);
+        _entityForTests.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.FromSeconds(1));
         _entityForTests.CreatedBy.Should().Be(CreateRequestedBy);
         _entityForTests.LastUpdatedAt.Should().BeAfter(_entityForTests.CreatedAt);
         _entityForTests.LastUpdatedBy.Should().Be(UpdateRequestedBy);
@@ -53,7 +53,7 @@ public class BaseEntityTests
 
         _entityForTests.Property.Should().Be(UpdateProperty);
         _entityForTests.Id.Should().NotBeEmpty();
-        _entityForTests.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.MaxValue);
+        _entityForTests.CreatedAt.Should().BeCloseTo(_dateTime, TimeSpan.FromSeconds(1));
         _entityForTests.CreatedBy.Should().Be(CreateRequestedBy);
         _entityForTests.LastUpdatedAt.Should().BeAfter(_entityForTests.CreatedAt);
         _entityForTests.LastUpdatedBy.Should().Be(UpdateRequestedBy);
