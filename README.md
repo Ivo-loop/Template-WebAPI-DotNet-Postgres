@@ -21,7 +21,7 @@ This template delivers:
 
 In the root directory, execute the command `docker compose up`.
 
-Then, [click here](http://localhost:5001/swagger/index.html) to view the Swagger UI.
+Then, [click here](https://localhost:5001/swagger/index.html) to view the Swagger UI.
 
 Or, execute the command `docker compose up postgres` to execute the Postgres only.
 
